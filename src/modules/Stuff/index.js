@@ -16,9 +16,13 @@ const [modalVisible,setModalVisible]=useState(false)
       <Modal 
       style={{bottom:height/3.006,right:20,}}
       transparent={true}
-      visible={modalVisible}
-      animationInTiming={30000}
-      animationOut="slideOutDown"
+      isVisible={modalVisible}
+      backdropTransitionInTiming={0.001}
+      backdropTransitionOutTiming={0.001}
+      animationOutTiming={0.0000001}
+      animationInTiming={0.000001}
+      animationIn="slideInDown"
+      animationOut="slideOutUp"
       onBackdropPress={()=>setModalVisible(false)}
       >
 
@@ -45,12 +49,12 @@ const [modalVisible,setModalVisible]=useState(false)
 
             <TouchableOpacity style={styles.optionList} >
               <Image style={styles.iconImage} source={require('../../assets/images/icons/pencil.png')}/>
-              <Text style={styles.optionText}>{'Create profile'}</Text>
+              <Text style={styles.optionText}>{'Manage profile'}</Text>
               </TouchableOpacity>
 
             <TouchableOpacity style={styles.optionList}>
               <Image style={styles.iconImage} source={require('../../assets/images/icons/i.png')}/>
-              <Text style={styles.optionText}>{'Create profile'}</Text>
+              <Text style={styles.optionText}>{'Learn more about profiles'}</Text>
               </TouchableOpacity>
 
           </View>
@@ -70,7 +74,7 @@ const [modalVisible,setModalVisible]=useState(false)
         <Text style={styles.userName}>{'Krishna'}</Text>
         <Image style={styles.downArrow} source={require('../../assets/images/icons/Down-arrow-96.png')}/>
         </TouchableOpacity>
-        <View style={styles.settingView}><Image style={styles.setImage} source={require('../../assets/images/icons/icons8-setting-64.png')}/></View>
+        <TouchableOpacity style={styles.settingView}><Image style={styles.setImage} source={require('../../assets/images/icons/icons8-setting-64.png')}/></TouchableOpacity>
       </View>
       <MyStuffNav />
 
@@ -84,7 +88,7 @@ export default Menu
 const styles = StyleSheet.create({
   main:{
     flex:1,
-    backgroundColor:'#1d242e',
+    backgroundColor:'#12212d',
     paddingTop:height/21,
   },
   header:{
@@ -196,7 +200,7 @@ const styles = StyleSheet.create({
     overflow:'hidden',
     flexDirection:'row',
     marginTop:10,
-    height:'23%',
+    height:'20%',
     // borderWidth:1,
     // borderColor:'grey',
     paddingHorizontal:20,
@@ -204,13 +208,13 @@ const styles = StyleSheet.create({
   
   },
   iconImage:{
-    height:'80%',
-    width:'7%',
+    height:'90%',
+    width:'6.7%',
   },
   optionText:{
     marginLeft:18,
     color:'white',
-    fontSize:16,
+    fontSize:15,
     fontWeight:'600'
 
   },

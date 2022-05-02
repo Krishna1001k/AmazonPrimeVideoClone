@@ -13,7 +13,7 @@ const MyStuffNav = () => {
     screenOptions={{
         swipeEnabled:false,
         tabBarLabelStyle: { fontSize: 13,fontWeight:'600', },
-        tabBarStyle: { backgroundColor:'#1d242e' },
+        tabBarStyle: { backgroundColor:'#12212d' },
         tabBarActiveTintColor:'white',
         tabBarInactiveTintColor:'grey'
     }  
