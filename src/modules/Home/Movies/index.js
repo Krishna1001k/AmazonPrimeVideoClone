@@ -15,7 +15,7 @@ function Movies() {
 
 
   let newArr = topMovies.map((obj) => {
-      let URL = `https://image.tmdb.org/t/p/w780${obj.poster_path}`
+      let URL = `https://image.tmdb.org/t/p/w780${obj.backdrop_path}`
       return URL
     })
     newArr = newArr.slice(4, 12)
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   main: {
     // flex:1,
     backgroundColor: '#1d242e',
-    paddingTop: 40,
+    // paddingTop: 40,
     // backgroundColor:'white'
 
   },

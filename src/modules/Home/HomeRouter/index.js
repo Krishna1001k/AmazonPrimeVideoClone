@@ -6,7 +6,8 @@ import Kids from '../Kids'
 import TvShow from '../TVshow'
 import Movies from '../Movies'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-const HomeNav = () => {
+const HomeNav = (props) => {
+  // console.log(props.navigation)
     const TopTab = createMaterialTopTabNavigator();
   return (
     <TopTab.Navigator 

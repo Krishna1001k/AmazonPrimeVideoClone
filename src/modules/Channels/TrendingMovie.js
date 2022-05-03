@@ -37,9 +37,10 @@ const styles = StyleSheet.create({
     display: {
         height: height/7.9 ,
         backgroundColor: '#1d242e',
+        // marginLeft:14,
         // borderWidth: 1,
         // marginBottom: 4,
-        padding:3,
+        paddingLeft:10,
     
       },
 })

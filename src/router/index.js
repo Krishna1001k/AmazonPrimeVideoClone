@@ -8,6 +8,9 @@ import Channels from '../modules/Channels'
 import Search from '../modules/Search'
 import Stuff from '../modules/Stuff'
 import MyStore from '../modules/PrimeStore/index'
+import MovieNavigation from '../component/MovieNavigation'
+import ChannelNav from '../component/ChannelNav'
+import StoreNav from '../component/StoreNav'
 
 
 const Navig = () => {
@@ -28,7 +31,7 @@ const Navig = () => {
 
 
  {/*....................................HOME.......................................*/}
-        <Tab.Screen name="Home" component={Home} options={{
+        <Tab.Screen name="Home" component={MovieNavigation} options={{
 
           tabBarActiveTintColor: '#3498DB',
           tabBarInactiveTintColor: '#CCCCCC',
@@ -53,8 +56,8 @@ const Navig = () => {
         }} />
 
    
-{/*....................................store.......................................*/}
-<Tab.Screen name="Store" component={MyStore} options={{
+{/* ....................................store....................................... */}
+<Tab.Screen name="Store" component={StoreNav} options={{
 
 tabBarActiveTintColor: '#3498DB',
 tabBarInactiveTintColor: '#CCCCCC',
@@ -79,7 +82,7 @@ tabBarIcon: ({ focused, color, size }) => {
 }} />     
 
   {/*................................Channels.......................................*/}
-        <Tab.Screen name="Channels" component={Channels} options={{
+        <Tab.Screen name="Channels" component={ChannelNav} options={{
 
           tabBarActiveTintColor: '#3498DB',
           tabBarInactiveTintColor: '#CCCCCC',
@@ -129,7 +132,7 @@ tabBarIcon: ({ focused, color, size }) => {
         }} />
 
 
-{/*....................................Menu.......................................*/}        
+{/*....................................MyStuff.......................................*/}        
         <Tab.Screen name="My Stuff" component={Stuff} options={{
 
           tabBarActiveTintColor: '#3498DB',

@@ -5,13 +5,14 @@ import FirstApiCall from './action'
 import { SliderBox } from 'react-native-image-slider-box'
 import TopMoviesList from './TopMovieListView'
 import TrendingMovie from './TrendingMovie'
+import { useNavigation } from '@react-navigation/native'
 
 const { height, width } = Dimensions.get('screen')
 
 
 const TabHome = () => {
-
-  
+  // const navigation = useNavigation();
+  // console.log("Home ka nav ", navigation)  
 
   const {topMovies,trendingMovies} = useSelector(store=>store.tabHomeReducer)
   const dispatch = useDispatch()
@@ -26,7 +27,7 @@ const TabHome = () => {
 
 
   let newArr = topMovies.map((obj) => {
-    let URL = `https://image.tmdb.org/t/p/w780${obj.poster_path}`
+    let URL = `https://image.tmdb.org/t/p/w780${obj.backdrop_path}`
     return URL
   })
   newArr = newArr.slice(4, 12)
@@ -44,7 +45,7 @@ const TabHome = () => {
         dotStyle={styles.dot}
         dotColor="white"
         // resizeMode='stretch'
-        resizeMode="cover"
+        // resizeMode="cover"
       />
 
       <Text style={styles.title} >{'Top Movies'}</Text>
@@ -98,9 +99,6 @@ const styles = StyleSheet.create({
   sliderImage: {
     height: height/5,
     width: width,
-    
-
-
     
   },
   dot:{

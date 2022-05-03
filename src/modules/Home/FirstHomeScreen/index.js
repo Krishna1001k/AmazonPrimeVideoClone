@@ -4,7 +4,7 @@ import HomeNav from '../HomeRouter/index'
 
 const Home = () => {
 
-
+// console.log('hone',navigation)
   return (
 
     <View style={styles.main}  >
