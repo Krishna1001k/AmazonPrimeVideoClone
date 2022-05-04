@@ -1,6 +1,7 @@
 const initialData={
     topMovies:[],
     trendingMovies:[],
+    upcomingMovies:[],
 }
 
 const tabHomeReducer=(state=initialData,action)=>{
@@ -12,6 +13,9 @@ const tabHomeReducer=(state=initialData,action)=>{
         
         case "TRENDING_MOVIES":
             return{...state,...{trendingMovies:[...payload]}}
+        
+        case "UPCOMING_MOVIES":
+            return{...state,...{upcomingMovies:[...payload]}}
         
         default:
             return{...state}

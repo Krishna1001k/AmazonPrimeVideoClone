@@ -9,12 +9,12 @@ const { height, width } = Dimensions.get('screen')
 
 function Movies() {
 
-  const { topMovies, trendingMovies } = useSelector((store) => store.tabHomeReducer)
+  const { topMovies, trendingMovies,upcomingMovies } = useSelector((store) => store.tabHomeReducer)
   // const store = useSelector()
   // console.log(store)
 
 
-  let newArr = topMovies.map((obj) => {
+  let newArr = upcomingMovies.map((obj) => {
       let URL = `https://image.tmdb.org/t/p/w780${obj.backdrop_path}`
       return URL
     })

@@ -17,7 +17,7 @@ const Navig = () => {
   
   const Tab = createBottomTabNavigator();
   return (
-    <NavigationContainer>
+    
       <Tab.Navigator screenOptions={
 
         {
@@ -158,7 +158,7 @@ tabBarIcon: ({ focused, color, size }) => {
         }} />
 
       </Tab.Navigator>
-    </NavigationContainer>
+   
   )
 }
 

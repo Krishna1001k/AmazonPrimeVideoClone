@@ -1,24 +1,32 @@
 import { Dimensions, StyleSheet, Text, View, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import TopMoviesList from './TopMovieListView'
 import TrendingMovie from './TrendingMovie'
+import TvShowApiCall from './action'
 import { SliderBox } from "react-native-image-slider-box"
+import TopShows from './PopularShow'
 
 const { height, width } = Dimensions.get('screen')
 
 function TvShow() {
 
   const { topMovies, trendingMovies } = useSelector((store) => store.tabHomeReducer)
+  const {popularShow,topRatedShow}=useSelector((store)=>store.tvShowsReducer)
   // const store = useSelector()
   // console.log(store)
+const dispatch=useDispatch();
+  useEffect(()=>{
+    dispatch(TvShowApiCall)
+  },[])
 
-
-  let newArr = topMovies.map((obj) => {
+  let newArr = popularShow.map((obj) => {
       let URL = `https://image.tmdb.org/t/p/w780${obj.backdrop_path}`
       return URL
     })
-    newArr = newArr.slice(4, 12)
+    newArr = newArr.slice(1, 8)
+
+
 
   return (
     <ScrollView contentContainerStyle={styles.main} bounces={'false'}>
@@ -33,11 +41,12 @@ function TvShow() {
                     resizeMode="cover"
                   />
 
-      <Text style={styles.title} >{'Top Movies'}</Text>
-      <TopMoviesList topMovies={topMovies}/>
+      <Text style={styles.title} >{'Popular Tv Shows'}</Text>
+      < TopShows show={popularShow}/>
 
-      <Text style={styles.title}>{'Trending Movies'}</Text>
-      <TrendingMovie trendingMovies={trendingMovies}/>
+      <Text style={styles.title}>{'Top Rated Shows'}</Text>
+      < TopShows show={topRatedShow}/>
+
       <Text style={styles.title} >{'Top Movies'}</Text>
       <TopMoviesList topMovies={topMovies}/>
 

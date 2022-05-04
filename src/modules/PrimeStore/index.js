@@ -18,7 +18,7 @@ function MyStore() {
       let URL = `https://image.tmdb.org/t/p/w780${obj.backdrop_path}`
       return URL
     })
-    newArr = newArr.slice(4, 12)
+    newArr = newArr.slice(10, 18)
 
   return (
     <ScrollView contentContainerStyle={styles.main} bounces={'false'}>
