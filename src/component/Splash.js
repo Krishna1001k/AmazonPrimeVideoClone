@@ -5,7 +5,7 @@ import {getStatusBarHeight} from 'react-native-status-bar-height';
 const TopH = getStatusBarHeight();
 const SplashScreen = ({navigation}) => {
   setTimeout(() => {
-    navigation.navigate('start');
+    navigation.replace('start');
   }, 1000);
   return (
     <View style={styles.main}>

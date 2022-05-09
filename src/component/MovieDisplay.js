@@ -86,7 +86,7 @@ const MovieDisplay = () => {
                 source={require('../assets/images/icons/popper.png')}
               />
             </View>
-            <Text style={styles.btnText}>{'Watch Party'}</Text>
+            <Text style={styles.btnText}>Watch Party</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.optionBtnView}>
             <View style={styles.optionBtn}>
@@ -102,7 +102,7 @@ const MovieDisplay = () => {
         {/* ...............................detail........................ */}
         <View style={styles.detailView}>
           <TouchableOpacity
-            onPress={() => setLines(10)}
+            onPress={() => setLines(0)}
             activeOpacity={1}
             style={styles.detail}>
             <Text numberOfLines={lines} style={styles.detailText}>
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     paddingTop: TopH,
   },
   display: {
-    overflow: 'hidden',
+    // overflow: 'hidden',
     height: '30%',
     width: '100%',
     backgroundColor: 'grey',

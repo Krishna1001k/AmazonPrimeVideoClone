@@ -19,7 +19,7 @@ import {useNavigation} from '@react-navigation/native';
 const {height, width} = Dimensions.get('screen');
 
 const TabHome = () => {
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
   // console.log("Home ka nav ", navigation)
 
   const {topMovies, trendingMovies, upcomingMovies} = useSelector(
@@ -46,6 +46,16 @@ const TabHome = () => {
         autoplay
         circleLoop
         ImageLoader
+        onCurrentImagePressed={img_indx => {
+          const item = topMovies.findIndex(ele => {
+            return (
+              newArr[img_indx] ===
+              `https://image.tmdb.org/t/p/w780${ele.backdrop_path}`
+            );
+          });
+
+          return navigation.navigate('MovieDisplay', {item: topMovies[item]});
+        }}
         ImageComponentStyle={styles.sliderImage}
         inactiveDotColor="grey"
         dotStyle={styles.dot}
@@ -59,7 +69,7 @@ const TabHome = () => {
 
       <Text style={styles.title}>{'Trending Movies'}</Text>
       <TrendingMovie trendingMovies={trendingMovies} />
-      
+
       <Text style={styles.title}>{'Upcoming Movies'}</Text>
       <UpcomingMovies upcomingMovies={upcomingMovies} />
 
